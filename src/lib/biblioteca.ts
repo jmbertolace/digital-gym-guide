@@ -1,0 +1,75 @@
+export const GRUPOS = [
+  "Peito",
+  "Costas",
+  "Ombros",
+  "Bíceps",
+  "Tríceps",
+  "Quadríceps",
+  "Posterior de coxa",
+  "Glúteos",
+  "Panturrilhas",
+  "Abdômen",
+] as const;
+
+export const BIBLIOTECA: { nome: string; grupo: string }[] = [
+  { nome: "Supino reto", grupo: "Peito" },
+  { nome: "Supino inclinado", grupo: "Peito" },
+  { nome: "Supino declinado", grupo: "Peito" },
+  { nome: "Crucifixo com halteres", grupo: "Peito" },
+  { nome: "Crossover", grupo: "Peito" },
+  { nome: "Flexão de braço", grupo: "Peito" },
+  { nome: "Peck deck", grupo: "Peito" },
+
+  { nome: "Puxada frontal", grupo: "Costas" },
+  { nome: "Remada curvada", grupo: "Costas" },
+  { nome: "Remada baixa", grupo: "Costas" },
+  { nome: "Remada unilateral", grupo: "Costas" },
+  { nome: "Barra fixa", grupo: "Costas" },
+  { nome: "Pulldown", grupo: "Costas" },
+  { nome: "Levantamento terra", grupo: "Costas" },
+
+  { nome: "Desenvolvimento com halteres", grupo: "Ombros" },
+  { nome: "Desenvolvimento militar", grupo: "Ombros" },
+  { nome: "Elevação lateral", grupo: "Ombros" },
+  { nome: "Elevação frontal", grupo: "Ombros" },
+  { nome: "Crucifixo inverso", grupo: "Ombros" },
+  { nome: "Encolhimento", grupo: "Ombros" },
+
+  { nome: "Rosca direta", grupo: "Bíceps" },
+  { nome: "Rosca alternada", grupo: "Bíceps" },
+  { nome: "Rosca martelo", grupo: "Bíceps" },
+  { nome: "Rosca scott", grupo: "Bíceps" },
+  { nome: "Rosca concentrada", grupo: "Bíceps" },
+
+  { nome: "Tríceps pulley", grupo: "Tríceps" },
+  { nome: "Tríceps testa", grupo: "Tríceps" },
+  { nome: "Tríceps corda", grupo: "Tríceps" },
+  { nome: "Tríceps francês", grupo: "Tríceps" },
+  { nome: "Mergulho no banco", grupo: "Tríceps" },
+
+  { nome: "Agachamento livre", grupo: "Quadríceps" },
+  { nome: "Leg press", grupo: "Quadríceps" },
+  { nome: "Cadeira extensora", grupo: "Quadríceps" },
+  { nome: "Agachamento hack", grupo: "Quadríceps" },
+  { nome: "Afundo", grupo: "Quadríceps" },
+
+  { nome: "Mesa flexora", grupo: "Posterior de coxa" },
+  { nome: "Cadeira flexora", grupo: "Posterior de coxa" },
+  { nome: "Stiff", grupo: "Posterior de coxa" },
+  { nome: "Flexora em pé", grupo: "Posterior de coxa" },
+
+  { nome: "Elevação pélvica", grupo: "Glúteos" },
+  { nome: "Cadeira abdutora", grupo: "Glúteos" },
+  { nome: "Glúteo no cabo", grupo: "Glúteos" },
+  { nome: "Avanço", grupo: "Glúteos" },
+
+  { nome: "Panturrilha em pé", grupo: "Panturrilhas" },
+  { nome: "Panturrilha sentado", grupo: "Panturrilhas" },
+  { nome: "Panturrilha no leg press", grupo: "Panturrilhas" },
+
+  { nome: "Abdominal supra", grupo: "Abdômen" },
+  { nome: "Abdominal infra", grupo: "Abdômen" },
+  { nome: "Prancha", grupo: "Abdômen" },
+  { nome: "Elevação de pernas", grupo: "Abdômen" },
+  { nome: "Abdominal oblíquo", grupo: "Abdômen" },
+];
