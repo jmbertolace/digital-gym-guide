@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ConfiguracoesRouteImport } from './routes/configuracoes'
 import { Route as HistoricoRouteImport } from './routes/historico'
 import { Route as ProgressoRouteImport } from './routes/progresso'
+import { Route as RapidoRouteImport } from './routes/rapido'
 import { Route as SessaoRouteImport } from './routes/sessao'
 import { Route as FichasIndexRouteImport } from './routes/fichas.index'
 import { Route as FichasFichaIdRouteImport } from './routes/fichas.$fichaId'
@@ -36,6 +37,11 @@ const HistoricoRoute = HistoricoRouteImport.update({
 const ProgressoRoute = ProgressoRouteImport.update({
   id: '/progresso',
   path: '/progresso',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RapidoRoute = RapidoRouteImport.update({
+  id: '/rapido',
+  path: '/rapido',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SessaoRoute = SessaoRouteImport.update({
@@ -64,6 +70,7 @@ export interface FileRoutesByFullPath {
   '/configuracoes': typeof ConfiguracoesRoute
   '/historico': typeof HistoricoRoute
   '/progresso': typeof ProgressoRoute
+  '/rapido': typeof RapidoRoute
   '/sessao': typeof SessaoRoute
   '/fichas/$fichaId': typeof FichasFichaIdRoute
   '/treino/$fichaId': typeof TreinoFichaIdRoute
@@ -74,6 +81,7 @@ export interface FileRoutesByTo {
   '/configuracoes': typeof ConfiguracoesRoute
   '/historico': typeof HistoricoRoute
   '/progresso': typeof ProgressoRoute
+  '/rapido': typeof RapidoRoute
   '/sessao': typeof SessaoRoute
   '/fichas/$fichaId': typeof FichasFichaIdRoute
   '/treino/$fichaId': typeof TreinoFichaIdRoute
@@ -85,6 +93,7 @@ export interface FileRoutesById {
   '/configuracoes': typeof ConfiguracoesRoute
   '/historico': typeof HistoricoRoute
   '/progresso': typeof ProgressoRoute
+  '/rapido': typeof RapidoRoute
   '/sessao': typeof SessaoRoute
   '/fichas/$fichaId': typeof FichasFichaIdRoute
   '/treino/$fichaId': typeof TreinoFichaIdRoute
@@ -97,6 +106,7 @@ export interface FileRouteTypes {
     | '/configuracoes'
     | '/historico'
     | '/progresso'
+    | '/rapido'
     | '/sessao'
     | '/fichas/$fichaId'
     | '/treino/$fichaId'
@@ -107,6 +117,7 @@ export interface FileRouteTypes {
     | '/configuracoes'
     | '/historico'
     | '/progresso'
+    | '/rapido'
     | '/sessao'
     | '/fichas/$fichaId'
     | '/treino/$fichaId'
@@ -117,6 +128,7 @@ export interface FileRouteTypes {
     | '/configuracoes'
     | '/historico'
     | '/progresso'
+    | '/rapido'
     | '/sessao'
     | '/fichas/$fichaId'
     | '/treino/$fichaId'
@@ -128,6 +140,7 @@ export interface RootRouteChildren {
   ConfiguracoesRoute: typeof ConfiguracoesRoute
   HistoricoRoute: typeof HistoricoRoute
   ProgressoRoute: typeof ProgressoRoute
+  RapidoRoute: typeof RapidoRoute
   SessaoRoute: typeof SessaoRoute
   FichasFichaIdRoute: typeof FichasFichaIdRoute
   TreinoFichaIdRoute: typeof TreinoFichaIdRoute
@@ -162,6 +175,13 @@ declare module '@tanstack/react-router' {
       path: '/progresso'
       fullPath: '/progresso'
       preLoaderRoute: typeof ProgressoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rapido': {
+      id: '/rapido'
+      path: '/rapido'
+      fullPath: '/rapido'
+      preLoaderRoute: typeof RapidoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sessao': {
@@ -200,6 +220,7 @@ const rootRouteChildren: RootRouteChildren = {
   ConfiguracoesRoute: ConfiguracoesRoute,
   HistoricoRoute: HistoricoRoute,
   ProgressoRoute: ProgressoRoute,
+  RapidoRoute: RapidoRoute,
   SessaoRoute: SessaoRoute,
   FichasFichaIdRoute: FichasFichaIdRoute,
   TreinoFichaIdRoute: TreinoFichaIdRoute,
