@@ -10,33 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ConfiguracoesRouteImport } from './routes/configuracoes'
+import { Route as HistoricoRouteImport } from './routes/historico'
+import { Route as ProgressoRouteImport } from './routes/progresso'
+import { Route as SessaoRouteImport } from './routes/sessao'
+import { Route as FichasIndexRouteImport } from './routes/fichas.index'
+import { Route as FichasFichaIdRouteImport } from './routes/fichas.$fichaId'
+import { Route as TreinoFichaIdRouteImport } from './routes/treino.$fichaId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ConfiguracoesRoute = ConfiguracoesRouteImport.update({
+  id: '/configuracoes',
+  path: '/configuracoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HistoricoRoute = HistoricoRouteImport.update({
+  id: '/historico',
+  path: '/historico',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgressoRoute = ProgressoRouteImport.update({
+  id: '/progresso',
+  path: '/progresso',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SessaoRoute = SessaoRouteImport.update({
+  id: '/sessao',
+  path: '/sessao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FichasIndexRoute = FichasIndexRouteImport.update({
+  id: '/fichas/',
+  path: '/fichas/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FichasFichaIdRoute = FichasFichaIdRouteImport.update({
+  id: '/fichas/$fichaId',
+  path: '/fichas/$fichaId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TreinoFichaIdRoute = TreinoFichaIdRouteImport.update({
+  id: '/treino/$fichaId',
+  path: '/treino/$fichaId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/configuracoes': typeof ConfiguracoesRoute
+  '/historico': typeof HistoricoRoute
+  '/progresso': typeof ProgressoRoute
+  '/sessao': typeof SessaoRoute
+  '/fichas/$fichaId': typeof FichasFichaIdRoute
+  '/treino/$fichaId': typeof TreinoFichaIdRoute
+  '/fichas/': typeof FichasIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/configuracoes': typeof ConfiguracoesRoute
+  '/historico': typeof HistoricoRoute
+  '/progresso': typeof ProgressoRoute
+  '/sessao': typeof SessaoRoute
+  '/fichas/$fichaId': typeof FichasFichaIdRoute
+  '/treino/$fichaId': typeof TreinoFichaIdRoute
+  '/fichas': typeof FichasIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/configuracoes': typeof ConfiguracoesRoute
+  '/historico': typeof HistoricoRoute
+  '/progresso': typeof ProgressoRoute
+  '/sessao': typeof SessaoRoute
+  '/fichas/$fichaId': typeof FichasFichaIdRoute
+  '/treino/$fichaId': typeof TreinoFichaIdRoute
+  '/fichas/': typeof FichasIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/configuracoes'
+    | '/historico'
+    | '/progresso'
+    | '/sessao'
+    | '/fichas/$fichaId'
+    | '/treino/$fichaId'
+    | '/fichas/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/configuracoes'
+    | '/historico'
+    | '/progresso'
+    | '/sessao'
+    | '/fichas/$fichaId'
+    | '/treino/$fichaId'
+    | '/fichas'
+  id:
+    | '__root__'
+    | '/'
+    | '/configuracoes'
+    | '/historico'
+    | '/progresso'
+    | '/sessao'
+    | '/fichas/$fichaId'
+    | '/treino/$fichaId'
+    | '/fichas/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ConfiguracoesRoute: typeof ConfiguracoesRoute
+  HistoricoRoute: typeof HistoricoRoute
+  ProgressoRoute: typeof ProgressoRoute
+  SessaoRoute: typeof SessaoRoute
+  FichasFichaIdRoute: typeof FichasFichaIdRoute
+  TreinoFichaIdRoute: typeof TreinoFichaIdRoute
+  FichasIndexRoute: typeof FichasIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +143,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/configuracoes': {
+      id: '/configuracoes'
+      path: '/configuracoes'
+      fullPath: '/configuracoes'
+      preLoaderRoute: typeof ConfiguracoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/historico': {
+      id: '/historico'
+      path: '/historico'
+      fullPath: '/historico'
+      preLoaderRoute: typeof HistoricoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/progresso': {
+      id: '/progresso'
+      path: '/progresso'
+      fullPath: '/progresso'
+      preLoaderRoute: typeof ProgressoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sessao': {
+      id: '/sessao'
+      path: '/sessao'
+      fullPath: '/sessao'
+      preLoaderRoute: typeof SessaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fichas/': {
+      id: '/fichas/'
+      path: '/fichas'
+      fullPath: '/fichas/'
+      preLoaderRoute: typeof FichasIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fichas/$fichaId': {
+      id: '/fichas/$fichaId'
+      path: '/fichas/$fichaId'
+      fullPath: '/fichas/$fichaId'
+      preLoaderRoute: typeof FichasFichaIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/treino/$fichaId': {
+      id: '/treino/$fichaId'
+      path: '/treino/$fichaId'
+      fullPath: '/treino/$fichaId'
+      preLoaderRoute: typeof TreinoFichaIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ConfiguracoesRoute: ConfiguracoesRoute,
+  HistoricoRoute: HistoricoRoute,
+  ProgressoRoute: ProgressoRoute,
+  SessaoRoute: SessaoRoute,
+  FichasFichaIdRoute: FichasFichaIdRoute,
+  TreinoFichaIdRoute: TreinoFichaIdRoute,
+  FichasIndexRoute: FichasIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
